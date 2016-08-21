@@ -1,5 +1,7 @@
-import mainPageModule from './views/main-page/main-page';
-import header from './components/header/header';
+import mainPageModule from './views/main-page';
+import header from './components/header';
+
+const angular = require('angular');
 
 angular.module('myApp', ['myApp.views.mainPage', 'myApp.header'])
     .config(['$locationProvider', function($locationProvider) {

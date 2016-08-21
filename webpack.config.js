@@ -1,11 +1,16 @@
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
-let path = require('path');
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './app/app.js',
     output: {
-        filename: './app/bundle.js'
+        path: path.join(__dirname, 'public'),
+        publicPath: '/',
+        filename: 'index.js'
     },
     resolve: {
         modulesDirectories: ['node_modules'],
@@ -30,7 +35,26 @@ module.exports = {
                 query: {
                     presets: ['es2015']
                 }
+            },
+            {
+                test: /\.styl$/,
+                loader: ExtractTextPlugin.extract('css!stylus?linenos')
+            },
+            {
+                test: /\.pug$/,
+                exclude: /app\.pug$/,
+                loader: 'file?name=ng-tmpls/[hash].html!jade-html'
             }
         ]
+    },
+    plugins: [
+        new webpack.NoErrorsPlugin(),
+        new ExtractTextPlugin('index.css'),
+        new HtmlWebpackPlugin({
+            template: 'pug?pretty!./app/app.pug'
+        })
+    ],
+    externals: {
+        angular: true
     }
 };

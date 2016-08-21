@@ -1,0 +1,16 @@
+doctype html
+
+html(lang='ru', ng-app='myApp')
+
+  head
+    meta(charset='utf-8')
+    title My AngularJS App
+    meta(name='description', content='TBD')
+
+  body
+    fp-header
+    ng-view
+
+    //- In production use `.min`
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js')
