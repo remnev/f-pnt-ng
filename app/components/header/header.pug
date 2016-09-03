@@ -1,2 +1,18 @@
-.header__logo лого
-.header__menu меню
+-
+    let itemsData = [
+        {path: '/', title: 'Главная'},
+        {path: '/cars/', title: 'Машины'},
+        // {path: '/services/', title: 'Сервисы'},
+        // {path: '/parts/', title: 'Запчасти'},
+        // {path: '/q-a/', title: 'Вопросы-ответы'}
+    ];
+
+a.header__logo(href='/')
+
+.header__menu
+    each item in itemsData
+        a.header__menu-item(
+            href=item.path
+            ng-class=`{ active: isLinkActive('${item.path}') }`
+        )
+            = item.title

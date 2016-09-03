@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './app/app.js',
+    entry: './app',
     output: {
         path: path.join(__dirname, 'public'),
         publicPath: '/',
@@ -44,6 +44,10 @@ module.exports = {
                 test: /\.pug$/,
                 exclude: /app\.pug$/,
                 loader: 'file?name=ng-tmpls/[hash].html!jade-html'
+            },
+            {
+                test: /\.png$/,
+                loader: 'file?name=img/[hash].[ext]'
             }
         ]
     },

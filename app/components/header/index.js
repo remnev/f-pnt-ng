@@ -1,12 +1,6 @@
+import './header.module';
+import './header.directive';
+
 import './header.styl';
-import tmpl from './header.pug';
-
-import angular from 'angular';
-
-angular.module('myApp.header', [])
-    .directive('fpHeader', function() {
-        return {
-            templateUrl: tmpl,
-            restrict: 'E'
-        };
-    });
+import './__logo/header__logo.styl';
+import './__menu/header__menu.styl';
