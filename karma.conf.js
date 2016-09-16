@@ -1,8 +1,3 @@
-let webpackConfig = require('./webpack.config');
-
-webpackConfig.entry = {};
-webpackConfig.plugins = [];
-
 module.exports = config => {
   config.set({
 
@@ -21,14 +16,44 @@ module.exports = config => {
         pattern: 'bower_components/angular-mocks/angular-mocks.js',
         watched: false
       },
-      '../public/index.js',
       'components/**/*.test.js'
     ],
 
     preprocessors: {
       'components/**/*.test.js': ['webpack']
     },
-    webpack: webpackConfig,
+
+    webpack: {
+      module: {
+        preLoaders: [
+          {
+            test: /\.js$/,
+            loader: 'istanbul-instrumenter',
+            exclude: /(node_modules|bower_components|\.test\.js$)/,
+            query: {
+              esModules: true
+            }
+          }
+        ],
+        loaders: [
+          {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel',
+            query: {
+              presets: ['es2015']
+            }
+          },
+          {
+            test: /\.(styl|pug)$/,
+            loader: 'ignore'
+          }
+        ]
+      },
+      externals: {
+        angular: true
+      }
+    },
     webpackMiddleware: {
       stats: 'errors-only'
     },
@@ -39,14 +64,22 @@ module.exports = config => {
 
     browsers: ['Firefox'],
 
-    plugins: [
-      'karma-firefox-launcher',
-      'karma-mocha',
-      'karma-mocha-reporter',
-      'karma-webpack'
-    ],
+    reporters: ['mocha', 'coverage'],
 
-    reporters: ['mocha']
+    coverageReporter: {
+      reporters: [
+        {
+          type: 'lcovonly',
+          dir: '../coverage/',
+          subdir: 'lcov'
+        },
+        {
+          type: 'html',
+          dir: '../coverage/',
+          subdir: 'html'
+        }
+      ]
+    }
 
   });
 };

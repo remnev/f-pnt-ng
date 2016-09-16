@@ -1,7 +1,9 @@
 import assert from 'assert';
 
+import './header.directive';
+
 describe('myApp.header directive', () => {
-    it('worked', () => {
+    it('works', () => {
         assert(true, true);
     });
     // var $compile;

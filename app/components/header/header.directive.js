@@ -1,4 +1,5 @@
 import tmpl from './header.pug';
+import './header.module';
 
 import angular from 'angular';
 
