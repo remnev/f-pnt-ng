@@ -45,7 +45,11 @@ module.exports = config => {
             }
           },
           {
-            test: /\.(styl|pug)$/,
+            test: /\.pug$/,
+            loader: 'ngtemplate!html!jade-html'
+          },
+          {
+            test: /\.styl$/,
             loader: 'ignore'
           }
         ]

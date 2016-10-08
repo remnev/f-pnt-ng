@@ -1,7 +1,17 @@
-import tmpl from './header.pug';
+import templateUrl from './header.pug';
+
 import './header.module';
 
 import angular from 'angular';
+
+// todo: get from a service
+const menuItems = [
+    {path: '/', title: 'Главная'},
+    {path: '/cars/', title: 'Машины'},
+    // {path: '/services/', title: 'Сервисы'},
+    // {path: '/parts/', title: 'Запчасти'},
+    // {path: '/q-a/', title: 'Вопросы-ответы'}
+];
 
 angular.module('myApp.header')
     .directive('fpHeader', directive);
@@ -10,7 +20,7 @@ directive.$inject = ['$location'];
 
 function directive ($location) {
     return {
-        templateUrl: tmpl,
+        templateUrl: templateUrl,
         restrict: 'E',
         link: link
     };
@@ -18,10 +28,16 @@ function directive ($location) {
     function link (scope, element) {
         element.addClass('header');
 
-        scope.isLinkActive = isLinkActive;
+        scope.menuItems = menuItems.map(addIsActiveMethod);
     }
 
-    function isLinkActive (href) {
-        return href === $location.path();
+    function addIsActiveMethod (item) {
+        item.isActive = isActive;
+
+        return item;
+    }
+
+    function isActive (path) {
+        return path === $location.path();
     }
 }
