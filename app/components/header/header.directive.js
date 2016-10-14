@@ -22,13 +22,17 @@ function directive ($location) {
     return {
         templateUrl: templateUrl,
         restrict: 'E',
-        link: link
+        link: link,
+        controller: controller,
+        controllerAs: 'vm'
     };
 
     function link (scope, element) {
         element.addClass('header');
+    }
 
-        scope.menuItems = menuItems.map(addIsActiveMethod);
+    function controller () {
+        this.menuItems = menuItems.map(addIsActiveMethod);
     }
 
     function addIsActiveMethod (item) {

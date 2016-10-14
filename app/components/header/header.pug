@@ -2,7 +2,7 @@ a.header__logo(href='/')
 
 .header__menu
     a.header__menu-item(
-        ng-repeat='item in menuItems'
+        ng-repeat='item in vm.menuItems'
         href='{{item.path}}'
         ng-class='{active: item.isActive(item.path)}'
     )
