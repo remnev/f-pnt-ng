@@ -1,25 +1,24 @@
 import assert from 'assert';
 import angular from 'angular';
-
-import './header.directive';
+import '.';
 
 let $compile;
 let $rootScope;
 let $location;
 let element;
 
-beforeEach(angular.mock.module('myApp.header'));
-beforeEach(inject((_$compile_, _$rootScope_, _$location_) => {
-    $compile = _$compile_;
-    $rootScope = _$rootScope_;
-    $location = _$location_;
-}));
-beforeEach(() => {
-    element = $compile('<fp-header></fp-header>')($rootScope);
-    $rootScope.$digest();
-});
-
 describe('myApp.header.directive', () => {
+    beforeEach(angular.mock.module('myApp.header'));
+    beforeEach(inject((_$compile_, _$rootScope_, _$location_) => {
+        $compile = _$compile_;
+        $rootScope = _$rootScope_;
+        $location = _$location_;
+    }));
+    beforeEach(() => {
+        element = $compile('<fp-header></fp-header>')($rootScope);
+        $rootScope.$digest();
+    });
+
     it('has `.header` class', () => {
         assert(element.hasClass('header'));
     });

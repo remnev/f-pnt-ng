@@ -46,7 +46,7 @@ module.exports = {
                 loader: 'file?name=ng-tmpls/[hash].html!jade-html'
             },
             {
-                test: /\.png$/,
+                test: /\.(png|jpg)$/,
                 loader: 'file?name=img/[hash].[ext]'
             }
         ]

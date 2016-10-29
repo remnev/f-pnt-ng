@@ -1,0 +1,7 @@
+h1.history__header {{vm.headerText}}
+.history__time-line
+    .history__model(ng-repeat='model in vm.models')
+        .history__years
+            .history__year(ng-repeat='year in model.years') {{year}}
+        a.history__title(ng-href='{{model.url}}') {{model.title}}
+        .history__description {{model.description}}
