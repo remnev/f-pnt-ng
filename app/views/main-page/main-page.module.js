@@ -1,5 +1,12 @@
 import '../../components/history';
+import '../../components/title';
 
 import angular from 'angular';
 
-angular.module('myApp.views.mainPage', ['ngRoute', 'myApp.history']);
+const deps = [
+    'ngRoute',
+    'myApp.history',
+    'myApp.title'
+];
+
+angular.module('myApp.views.mainPage', deps);

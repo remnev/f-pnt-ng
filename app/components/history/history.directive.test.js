@@ -6,7 +6,6 @@ let $compile;
 let $rootScope;
 let $location;
 let element;
-let fpHistoryService;
 
 describe('myApp.history.directive', () => {
     beforeEach(angular.mock.module('myApp.history'));
@@ -24,12 +23,12 @@ describe('myApp.history.directive', () => {
         assert(element.hasClass('history'));
     });
 
-    it('has header', () => {
-        assert(element[0].querySelectorAll('.history__header').length);
+    it('has fp-title', () => {
+        assert(element[0].querySelector('fp-title[data-level="1"]'));
     });
 
     it('has time-line', () => {
-        assert(element[0].querySelectorAll('.history__time-line').length);
+        assert(element[0].querySelector('.history__time-line'));
     });
 
     it('has number of models', () => {
