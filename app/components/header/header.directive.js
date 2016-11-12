@@ -24,7 +24,8 @@ function directive ($location) {
         restrict: 'E',
         link: link,
         controller: controller,
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        scope: {}
     };
 
     function link (scope, element) {

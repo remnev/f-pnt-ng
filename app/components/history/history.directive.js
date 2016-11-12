@@ -11,7 +11,8 @@ function directive () {
         restrict: 'E',
         link: link,
         controller: Controller,
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        scope: {}
     };
 }
 

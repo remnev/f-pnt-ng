@@ -4,15 +4,13 @@ import '.';
 
 let $compile;
 let $rootScope;
-let $location;
 let element;
 
 describe('myApp.history.directive', () => {
     beforeEach(angular.mock.module('myApp.history'));
-    beforeEach(inject((_$compile_, _$rootScope_, _$location_) => {
+    beforeEach(inject((_$compile_, _$rootScope_) => {
         $compile = _$compile_;
         $rootScope = _$rootScope_;
-        $location = _$location_;
     }));
     beforeEach(() => {
         element = $compile('<fp-history></fp-history>')($rootScope);

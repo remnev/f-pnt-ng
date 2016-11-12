@@ -22,7 +22,7 @@ module.exports = {
         moduleTemplates: ["*-loader", "*"]
     },
     watch: NODE_ENV === 'development',
-    wathOptions: {
+    watchOptions: {
         aggregateTimeout: 100
     },
     devtool: NODE_ENV === 'development' ? 'cheep-inline-module-source-map' : null,

@@ -1,0 +1,65 @@
+.reviews
+    width: 960px
+    margin: 0 auto
+    display: block
+    font-family: Arial, sans-serif
+    font-size: 13px
+
+    &__review
+        display: inline-block
+        box-sizing: border-box
+        width: 33%
+        padding: 10px
+        vertical-align: top
+
+    &__review-title
+        font-weight: bold
+
+    &__review-total-vote
+        float: right
+        width: 32px
+        height: @width
+        color: #fff
+        background-color: #23c936
+        border-radius: 50%
+        font-weight: bold
+        font-size: 15px
+        line-height: 32px
+        text-align: center
+        margin-left: 10px
+        margin-top: 10px
+
+    &__review-info
+        margin-top: 10px
+        text-align: right
+        font-style: italic
+        font-size: 11px
+
+        & > *
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+
+    &__review-author
+        line-height: 15px
+
+    &__review-text
+        line-height: 15px
+        margin-top: 10px
+        max-height: 105px
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 7
+
+    &__review-show-more
+        margin-top: 10px
+        color: #b80005
+        font-style: italic
+        float: right
+        display: inline-block
+        text-decoration: none
+
+        &:hover
+            text-decoration: underline
