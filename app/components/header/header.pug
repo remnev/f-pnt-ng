@@ -1,9 +1,9 @@
 a.header__logo(href='/')
 
 .header__menu
-    a.header__menu-item(
+    fp-link.header__menu-item(
         ng-repeat='item in vm.menuItems'
-        href='{{item.path}}'
+        data-url='{{item.path}}'
         ng-class='{active: item.isActive(item.path)}'
     )
         | {{item.title}}

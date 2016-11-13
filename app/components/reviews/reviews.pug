@@ -6,4 +6,4 @@
         .reviews__review-author {{review.author}}
         .reviews__review-car-info {{review.car.vendor}} {{review.car.model}} {{review.car.engine}} {{review.car.year}} г.в.
     .reviews__review-text {{review.text}}
-    a.reviews__review-show-more(ng-href="/cars/{{review.car.slug}}/reviews/{{review.id}}/") Отзыв полностью
+    fp-link.reviews__review-show-more(data-url="/cars/{{review.car.slug}}/reviews/{{review.id}}/") Отзыв полностью

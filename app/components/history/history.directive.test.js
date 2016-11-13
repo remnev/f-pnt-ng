@@ -21,8 +21,8 @@ describe('myApp.history.directive', () => {
         assert(element.hasClass('history'));
     });
 
-    it('has fp-title', () => {
-        assert(element[0].querySelector('fp-title[data-level="1"]'));
+    it('has h1 title', () => {
+        assert(element[0].querySelector('h1.title'));
     });
 
     it('has time-line', () => {

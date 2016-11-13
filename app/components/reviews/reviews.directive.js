@@ -13,7 +13,7 @@ function directive () {
         controller: Controller,
         controllerAs: 'vm',
         scope: {
-            limit: '='
+            limit: '@'
         },
         bindToController: true
     };
