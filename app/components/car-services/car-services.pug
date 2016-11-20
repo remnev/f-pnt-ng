@@ -1,0 +1,8 @@
+.car-services__service(ng-repeat="service in vm.carServices")
+    fp-link.car-services__service-name(data-url="/car-services/{{service.slug}}/", data-rating="{{service.rating}}") {{service.name}}
+    .car-services__service-regions
+        .car-services__service-region(ng-repeat="region in service.region") {{region | fpRegion}}
+    .car-services__service-address(ng-repeat="address in service.address") {{address}}
+    .car-services__service-phones
+        .car-services__service-phone(ng-repeat="phone in service.phone") +7 ({{phone.code}}) {{phone.number}}
+    .car-services__service-description {{service.description}}

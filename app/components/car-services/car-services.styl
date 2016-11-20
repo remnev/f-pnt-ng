@@ -1,0 +1,56 @@
+.car-services
+    width: 960px
+    margin: 0 auto
+    display: block
+    font-family: Arial, sans-serif
+    font-size: 11px
+
+    &__service
+        display: inline-block
+        box-sizing: border-box
+        width: 25%
+        padding: 10px
+        vertical-align: top
+
+    &__service-name
+        font-size: 13px
+        font-weight: bold
+
+        &::after
+            content: attr(data-rating)
+            color: #fff
+            font-size: 10px
+            font-weight: normal
+            font-family: Verdana, sans-serif
+            background-color: #23c936
+            padding: 2px 4px
+            margin-left: 4px
+            vertical-align: super
+            text-decoration: none
+            display: inline-block
+
+    &__service-description
+        line-height: 12px
+        max-height: 48px
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 4
+
+    &__service-regions
+    &__service-description
+        margin-top: 10px
+
+    &__service-phone
+    &__service-region
+        display: inline
+
+        &:not(:last-child)::after
+            content: ', '
+
+    &__service-region
+    &__service-address
+    &__service-phone
+        line-height: 13px
+        font-style: italic

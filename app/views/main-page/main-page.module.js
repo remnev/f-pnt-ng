@@ -1,5 +1,6 @@
 import '../../components/history';
 import '../../components/reviews';
+import '../../components/car-services';
 import '../../components/link';
 
 import angular from 'angular';
@@ -8,6 +9,7 @@ const deps = [
     'ngRoute',
     'myApp.history',
     'myApp.reviews',
+    'myApp.carServices',
     'myApp.link'
 ];
 
