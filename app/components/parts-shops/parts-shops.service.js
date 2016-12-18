@@ -74,6 +74,23 @@ function Service () {
             ],
             rating: 18,
             description: 'Наша компания занимается поставкой запасных частей для итальянских автомобилей.'
+        },
+        {
+            name: 'Елы-палы',
+            slug: 'eli-pali',
+            region: ['moscow'],
+            address: [
+                'ул. Южнопортовая, д. 36, стр. 6'
+            ],
+            site: 'http://eli-parts.ru',
+            phone: [
+                {
+                    code: '495',
+                    number: '649-33-91'
+                }
+            ],
+            rating: 38,
+            description: 'Тарам парам восемь дыр.'
         }
     ];
 }

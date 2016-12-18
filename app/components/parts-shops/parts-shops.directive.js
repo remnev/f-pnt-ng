@@ -26,7 +26,11 @@ function link (scope, element) {
 
 class Controller {
     constructor (partsShopsService) {
-        this.partsShops = partsShopsService.getPartsShops(this.limit, this.region);
+        this._partsShopsService = partsShopsService;
+    }
+
+    $onInit () {
+        this.partsShops = this._partsShopsService.getPartsShops(this.limit, this.region);
     }
 }
 

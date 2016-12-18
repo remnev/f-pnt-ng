@@ -24,8 +24,12 @@ function link (scope, element) {
 }
 
 class Controller {
-    constructor (ReviewsFactory) {
-        this.reviews = new ReviewsFactory(this.limit).reviews;
+    constructor (reviewsService) {
+        this._reviewsService = reviewsService;
+    }
+
+    $onInit () {
+        this.reviews = this._reviewsService.getReviews(this.limit);
     }
 
     getReviewTotalVote (votesData) {
@@ -36,4 +40,4 @@ class Controller {
     }
 }
 
-Controller.$inject = ['reviewsFactory'];
+Controller.$inject = ['reviewsService'];

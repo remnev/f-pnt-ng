@@ -1,4 +1,4 @@
 import './reviews.module';
-import './reviews.factory';
+import './reviews.service';
 import './reviews.directive';
 import './reviews.styl';
