@@ -9,7 +9,8 @@ function Service () {
         moscow: 'г. Москва',
         'saint-petersburg': 'г. Санкт-Петербург',
         'moscow-region': 'Московская область',
-        mytishchi: 'г. Мытищи'
+        mytishchi: 'г. Мытищи',
+        perm: 'г. Пермь'
     };
 }
 

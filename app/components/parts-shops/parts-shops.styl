@@ -1,0 +1,60 @@
+.parts-shops
+    width: 960px
+    margin: 0 auto
+    display: block
+    font-family: Arial, sans-serif
+    font-size: 11px
+
+    &__shop
+        display: inline-block
+        box-sizing: border-box
+        width: 25%
+        padding: 10px
+        vertical-align: top
+
+    &__shop-name
+        font-size: 13px
+        font-weight: bold
+
+        &::after
+            content: attr(data-rating)
+            color: #fff
+            font-size: 10px
+            font-weight: normal
+            font-family: Verdana, sans-serif
+            background-color: #23c936
+            padding: 2px 4px
+            margin-left: 4px
+            vertical-align: super
+            text-decoration: none
+            display: inline-block
+
+    &__shop-description
+        line-height: 12px
+        max-height: 48px
+        overflow: hidden
+        text-overflow: ellipsis
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 4
+
+    &__shop-site
+        color: #1b2ccb
+
+    &__shop-regions
+    &__shop-description
+        margin-top: 10px
+
+    &__shop-phone
+    &__shop-region
+        display: inline
+
+        &:not(:last-child)::after
+            content: ', '
+
+    &__shop-region
+    &__shop-address
+    &__shop-phone
+    &__shop-site
+        line-height: 13px
+        font-style: italic

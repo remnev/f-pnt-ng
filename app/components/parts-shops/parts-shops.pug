@@ -1,0 +1,9 @@
+.parts-shops__shop(ng-repeat="shop in vm.partsShops")
+    fp-link.parts-shops__shop-name(data-url="/parts-shops/{{shop.slug}}/", data-rating="{{shop.rating}}") {{shop.name}}
+    .parts-shops__shop-regions
+        .parts-shops__shop-region(ng-repeat="region in shop.region") {{region | fpRegion}}
+    .parts-shops__shop-address(ng-repeat="address in shop.address") {{address}}
+    .parts-shops__shop-phones
+        .parts-shops__shop-phone(ng-repeat="phone in shop.phone") +7 ({{phone.code}}) {{phone.number}}
+    fp-link.parts-shops__shop-site(data-url="{{shop.site}}") {{shop.site}}
+    .parts-shops__shop-description {{shop.description}}
