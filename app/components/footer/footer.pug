@@ -1,0 +1,25 @@
+.footer__inner
+    .footer__sections
+        .footer__section
+            fp-link.footer__title(data-url='/') Главная
+
+        .footer__section
+            .footer__title Технические характеристики
+            ul.footer__links
+                li(ng-repeat='model in vm.models')
+                    fp-link(data-url='/cars/{{model.slug}}/#tech-specs') {{model.title}}
+
+        .footer__section
+            .footer__title Отзывы
+            ul.footer__links
+                li(ng-repeat='model in vm.models')
+                    fp-link(data-url='/cars/{{model.slug}}/#reviews') {{model.title}}
+
+        .footer__section
+            fp-link.footer__title(data-url='http://mypunto.ru/forum/') Форум
+
+        .footer__section
+            fp-link(data-url='https://vk.com/club413469')
+                fa(data-name='vk').footer__vk
+
+    .footer__copyright © {{vm.year}} fiat-punto.ru

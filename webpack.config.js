@@ -46,8 +46,12 @@ module.exports = {
                 loader: 'file?name=ng-tmpls/[hash].html!jade-html'
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|svg)(\?v=.+)?$/,
                 loader: 'file?name=img/[hash].[ext]'
+            },
+            {
+                test: /\.(ttf|woff2?|eot)(\?v=.+)?$/,
+                loader: 'file?name=font/[hash].[ext]'
             }
         ]
     },
