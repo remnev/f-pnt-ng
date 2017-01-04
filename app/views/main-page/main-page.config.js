@@ -4,10 +4,18 @@ import angular from 'angular';
 angular.module('myApp.views.mainPage')
     .config(config);
 
-config.$inject = ['$routeProvider'];
-
 function config ($routeProvider) {
     $routeProvider.when('/', {
-        templateUrl: tmpl
+        templateUrl: tmpl,
+        controller: Controller
     });
 }
+
+class Controller {
+    constructor (headerService) {
+        headerService.setActiveMenuItem('main');
+    }
+}
+
+config.$inject = ['$routeProvider'];
+Controller.$inject = ['headerService'];

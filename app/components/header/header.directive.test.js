@@ -4,15 +4,15 @@ import '.';
 
 let $compile;
 let $rootScope;
-let $location;
+let headerService;
 let element;
 
 describe('myApp.header.directive', () => {
     beforeEach(angular.mock.module('myApp.header'));
-    beforeEach(inject((_$compile_, _$rootScope_, _$location_) => {
+    beforeEach(inject((_$compile_, _$rootScope_, _headerService_) => {
         $compile = _$compile_;
         $rootScope = _$rootScope_;
-        $location = _$location_;
+        headerService = _headerService_;
     }));
     beforeEach(() => {
         element = $compile('<fp-header></fp-header>')($rootScope);
@@ -31,12 +31,10 @@ describe('myApp.header.directive', () => {
         assert(element[0].querySelectorAll('.header__menu-item').length);
     });
 
-    it('has particular active menu item', () => {
-        ['/', '/cars/'].forEach((path) => {
-            $location.path(path);
-            $rootScope.$apply();
+    it('has breadcrumbs with number of items', () => {
+        headerService.breadcrumbs.items = [{path: '/foo', title: 'bar'}];
+        $rootScope.$digest();
 
-            assert.equal(element[0].querySelector('.active').getAttribute('href'), path);
-        });
+        assert(element[0].querySelectorAll('.header__breadcrumps-item').length);
     });
 });

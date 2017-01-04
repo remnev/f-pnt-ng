@@ -1,4 +1,6 @@
 import angular from 'angular';
 import '../link';
 
-angular.module('myApp.header', ['myApp.link']);
+const module = angular.module('myApp.header', ['myApp.link']);
+
+export default module.name;

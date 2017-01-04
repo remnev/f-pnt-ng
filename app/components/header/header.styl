@@ -2,3 +2,34 @@
     width: 960px
     margin: 20px auto 0
     display: block
+    overflow: auto
+
+    &__breadcrumps
+        margin-left: 240px
+        margin-top: 40px
+        font-family: Arial, sans-serif
+        font-size: 13px
+        display: none
+
+        &.visible
+            display: block
+
+    &__breadcrumps-item
+        display: inline
+
+        &:last-child
+            & ^[0]__breadcrumps-link
+                color: #000
+
+            & ^[0]__breadcrumps-divider
+                display: none
+
+    &__breadcrumps-link
+        display: inline-block
+
+        &:first-letter
+            text-transform: uppercase
+
+    &__breadcrumps-divider
+        display: inline
+        margin: 0 5px

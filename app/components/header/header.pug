@@ -4,6 +4,11 @@ a.header__logo(href='/')
     fp-link.header__menu-item(
         ng-repeat='item in vm.menuItems'
         data-url='{{item.path}}'
-        ng-class='{active: item.isActive(item.path)}'
+        ng-class='{active: item.isActive}'
     )
         | {{item.title}}
+
+.header__breadcrumps(ng-class='{visible: vm.breadcrumbs.isVisible}')
+    .header__breadcrumps-item(ng-repeat="item in vm.breadcrumbs.items")
+        fp-link.header__breadcrumps-link(data-url='{{item.path}}') {{item.title}}
+        .header__breadcrumps-divider →
