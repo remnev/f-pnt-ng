@@ -9,6 +9,7 @@ before_script:
   # - sleep 1 # give server time to start
 
 script:
+  - npm run eslint
   - npm run stylint
   - npm run test-single-run
   - npm run report-coverage

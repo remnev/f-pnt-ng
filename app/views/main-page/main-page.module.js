@@ -12,7 +12,7 @@ const deps = [
     'myApp.reviews',
     'myApp.carServices',
     'myApp.partsShops',
-    'myApp.link'
+    'myApp.link',
 ];
 
 angular.module('myApp.views.mainPage', deps);

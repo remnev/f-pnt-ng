@@ -34,7 +34,7 @@ describe('myApp.header.service', () => {
     describe('myApp.header.service.setBreadcrumbs()', () => {
         it('set breadcrumbs\' items', () => {
             const data = [
-                {path: 'foo', title: 'bar'}
+                {path: 'foo', title: 'bar'},
             ];
 
             headerService.setBreadcrumbs(data);
@@ -49,7 +49,7 @@ describe('myApp.header.service', () => {
 
             headerService.menuItems = [
                 {path: 'foo', title: 'bar', slug: 'one'},
-                {path: 'baz', title: 'quiz', slug: 'two'}
+                {path: 'baz', title: 'quiz', slug: 'two'},
             ];
 
             headerService.setActiveMenuItem(slug);

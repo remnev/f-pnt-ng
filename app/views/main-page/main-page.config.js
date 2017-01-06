@@ -4,15 +4,16 @@ import angular from 'angular';
 angular.module('myApp.views.mainPage')
     .config(config);
 
-function config ($routeProvider) {
+function config($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: tmpl,
-        controller: Controller
+        controller: Controller,
+        controllerAs: 'vm',
     });
 }
 
 class Controller {
-    constructor (headerService) {
+    constructor(headerService) {
         headerService.setActiveMenuItem('main');
     }
 }

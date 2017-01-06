@@ -1,27 +1,26 @@
 import templateUrl from './history.pug';
-import module from './history.module';
 import angular from 'angular';
 
-angular.module(module)
+angular.module('myApp.history')
     .directive('fpHistory', directive);
 
-function directive () {
+function directive() {
     return {
         templateUrl: templateUrl,
         restrict: 'E',
         link: link,
         controller: Controller,
         controllerAs: 'vm',
-        scope: {}
+        scope: {},
     };
 }
 
-function link (scope, element) {
+function link(scope, element) {
     element.addClass('history');
 }
 
 class Controller {
-    constructor (fpHistoryService) {
+    constructor(fpHistoryService) {
         this.headerText = fpHistoryService.headerText;
         this.models = fpHistoryService.models;
     }

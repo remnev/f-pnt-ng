@@ -1,21 +1,20 @@
 import templateUrl from './link.pug';
-import module from './link.module';
 import angular from 'angular';
 
-angular.module(module)
+angular.module('myApp.link')
     .directive('fpLink', directive);
 
-function directive () {
+function directive() {
     return {
         restrict: 'E',
         templateUrl: templateUrl,
         replace: true,
         transclude: true,
         scope: {
-            url: '@'
+            url: '@',
         },
         controllerAs: 'vm',
         bindToController: true,
-        controller: class {}
+        controller: class {},
     };
 }

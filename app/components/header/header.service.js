@@ -1,47 +1,53 @@
 import angular from 'angular';
-import module from './header.module';
 
-angular.module(module).service('headerService', Service);
+angular.module('myApp.header')
+    .factory('headerService', factory);
 
-function Service () {
-    this.breadcrumbs = {
-        isVisible: false,
-        items: []
-    };
-
-    this.menuItems = [
-        {slug: 'main', path: '/', title: 'Главная'},
-        {slug: 'cars', path: '/cars/', title: 'Машины'},
-        // {path: '/services/', title: 'Сервисы'},
-        // {path: '/parts/', title: 'Запчасти'},
-        // {path: '/q-a/', title: 'Вопросы-ответы'}
-    ];
+function factory() {
+    return new Service();
 }
 
-Service.prototype.toggleBreadcrumbs = function (isVisible) {
-    this.breadcrumbs.isVisible = Boolean(isVisible);
+class Service {
+    constructor() {
+        this.breadcrumbs = {
+            isVisible: false,
+            items: [],
+        };
 
-    return this;
-};
+        this.menuItems = [
+            {slug: 'main', path: '/', title: 'Главная'},
+            {slug: 'cars', path: '/cars/', title: 'Машины'},
+            // {path: '/services/', title: 'Сервисы'},
+            // {path: '/parts/', title: 'Запчасти'},
+            // {path: '/q-a/', title: 'Вопросы-ответы'}
+        ];
+    }
 
-Service.prototype.setBreadcrumbs = function (data) {
-    this.breadcrumbs.items = data.reduce((acc, item) => {
-        acc.push({path: item.path, title: item.title});
+    toggleBreadcrumbs(isVisible) {
+        this.breadcrumbs.isVisible = Boolean(isVisible);
 
-        return acc;
-    }, [{path: '/', title: 'Главная'}]);
+        return this;
+    }
 
-    return this;
-};
+    setBreadcrumbs(data) {
+        this.breadcrumbs.items = data.reduce((acc, item) => {
+            acc.push({path: item.path, title: item.title});
 
-Service.prototype.setActiveMenuItem = function (slug) {
-    this.menuItems.forEach((item) => {
-        if (item.slug === slug) {
-            item.isActive = true;
-        } else {
-            item.isActive = false;
-        }
-    });
+            return acc;
+        }, [{path: '/', title: 'Главная'}]);
 
-    return this;
-};
+        return this;
+    }
+
+    setActiveMenuItem(slug) {
+        this.menuItems.forEach((item) => {
+            if (item.slug === slug) {
+                item.isActive = true;
+            } else {
+                item.isActive = false;
+            }
+        });
+
+        return this;
+    }
+}

@@ -8,7 +8,7 @@ const deps = [
     'myApp.views.mainPage',
     'myApp.views.notFound',
     'myApp.header',
-    'myApp.footer'
+    'myApp.footer',
 ];
 
 angular.module('myApp', deps);

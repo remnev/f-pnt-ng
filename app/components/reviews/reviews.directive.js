@@ -1,11 +1,10 @@
 import templateUrl from './reviews.pug';
-import module from './reviews.module';
 import angular from 'angular';
 
-angular.module(module)
+angular.module('myApp.reviews')
     .directive('fpReviews', directive);
 
-function directive () {
+function directive() {
     return {
         restrict: 'E',
         link: link,
@@ -13,26 +12,26 @@ function directive () {
         controller: Controller,
         controllerAs: 'vm',
         scope: {
-            limit: '@'
+            limit: '@',
         },
-        bindToController: true
+        bindToController: true,
     };
 }
 
-function link (scope, element) {
+function link(scope, element) {
     element.addClass('reviews');
 }
 
 class Controller {
-    constructor (reviewsService) {
+    constructor(reviewsService) {
         this._reviewsService = reviewsService;
     }
 
-    $onInit () {
+    $onInit() {
         this.reviews = this._reviewsService.getReviews(this.limit);
     }
 
-    getReviewTotalVote (votesData) {
+    getReviewTotalVote(votesData) {
         const votesFields = Object.keys(votesData);
         const sum = votesFields.reduce((acc, field) => acc += votesData[field], 0);
 

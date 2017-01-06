@@ -1,10 +1,9 @@
 import angular from 'angular';
-import module from './region.module';
 
-angular.module(module)
+angular.module('myApp.region')
     .filter('fpRegion', filter);
 
-function filter (regionService) {
+function filter(regionService) {
     return (input) => regionService.getRegion(input);
 }
 

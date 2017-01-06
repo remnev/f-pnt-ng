@@ -27,8 +27,9 @@ describe('myApp.carServices.service', () => {
 
         it('result may be filtered by a region', () => {
             const region = 'moscow';
+            const filteredServices = carServicesService.getCarServices(1, region);
 
-            assert(carServicesService.getCarServices(1, region).every((service) => service.region.indexOf(region) !== -1));
+            assert(filteredServices.every((service) => service.region.indexOf(region) !== -1));
         });
 
         it('result has order from great rating to less', () => {

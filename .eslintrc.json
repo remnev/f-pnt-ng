@@ -1,0 +1,17 @@
+{
+    "extends": ["eslint:recommended", "angular", "google"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "env": {
+        "mocha": true,
+        "angular/mocks": true
+    },
+    "plugins": ["angular"],
+    "rules": {
+        "angular/typecheck-array": 0,
+        "require-jsdoc": 0,
+        "max-len": [2, {"code": 120}]
+    }
+}

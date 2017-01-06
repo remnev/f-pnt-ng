@@ -1,17 +1,16 @@
-import module from './title.module';
 import angular from 'angular';
 
-angular.module(module)
+angular.module('myApp.title')
     .directive('fpTitle', directive);
 
-function directive () {
+function directive() {
     return {
         restrict: 'E',
-        compile: compile
+        compile: compile,
     };
 }
 
-function compile (element, attrs) {
+function compile(element, attrs) {
     const replacer = angular
         .element(`<h${attrs.level}>`)
         .addClass('title')

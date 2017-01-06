@@ -1,19 +1,24 @@
 import angular from 'angular';
-import module from './region.module';
 
-angular.module(module)
-    .service('regionService', Service);
+angular.module('myApp.region')
+    .factory('regionService', factory);
 
-function Service () {
-    this.regions = {
-        moscow: 'г. Москва',
-        'saint-petersburg': 'г. Санкт-Петербург',
-        'moscow-region': 'Московская область',
-        mytishchi: 'г. Мытищи',
-        perm: 'г. Пермь'
-    };
+function factory() {
+    return new Service();
 }
 
-Service.prototype.getRegion = function (slug) {
-    return this.regions[slug];
-};
+class Service {
+    constructor() {
+        this.regions = {
+            'moscow': 'г. Москва',
+            'saint-petersburg': 'г. Санкт-Петербург',
+            'moscow-region': 'Московская область',
+            'mytishchi': 'г. Мытищи',
+            'perm': 'г. Пермь',
+        };
+    }
+
+    getRegion(slug) {
+        return this.regions[slug];
+    }
+}

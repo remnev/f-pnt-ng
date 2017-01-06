@@ -1,11 +1,10 @@
 import angular from 'angular';
-import module from './parts-shops.module';
 import templateUrl from './parts-shops.pug';
 
-angular.module(module)
+angular.module('myApp.partsShops')
     .directive('fpPartsShops', directive);
 
-function directive () {
+function directive() {
     return {
         restrict: 'E',
         link: link,
@@ -14,22 +13,22 @@ function directive () {
         controllerAs: 'vm',
         scope: {
             limit: '@',
-            region: '@'
+            region: '@',
         },
-        bindToController: true
+        bindToController: true,
     };
 }
 
-function link (scope, element) {
+function link(scope, element) {
     element.addClass('parts-shops');
 }
 
 class Controller {
-    constructor (partsShopsService) {
+    constructor(partsShopsService) {
         this._partsShopsService = partsShopsService;
     }
 
-    $onInit () {
+    $onInit() {
         this.partsShops = this._partsShopsService.getPartsShops(this.limit, this.region);
     }
 }

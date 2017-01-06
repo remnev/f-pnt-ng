@@ -1,13 +1,12 @@
 import tmpl from './not-found.pug';
 import angular from 'angular';
-import module from './not-found.module';
 
-angular.module(module)
+angular.module('myApp.views.notFound')
     .config(config);
 
-function config ($routeProvider) {
+function config($routeProvider) {
     $routeProvider.otherwise({
-        templateUrl: tmpl
+        templateUrl: tmpl,
     });
 }
 

@@ -1,11 +1,10 @@
 import angular from 'angular';
-import module from './car-services.module';
 import templateUrl from './car-services.pug';
 
-angular.module(module)
+angular.module('myApp.carServices')
     .directive('fpCarServices', directive);
 
-function directive () {
+function directive() {
     return {
         restrict: 'E',
         link: link,
@@ -14,22 +13,22 @@ function directive () {
         controllerAs: 'vm',
         scope: {
             limit: '@',
-            region: '@'
+            region: '@',
         },
-        bindToController: true
+        bindToController: true,
     };
 }
 
-function link (scope, element) {
+function link(scope, element) {
     element.addClass('car-services');
 }
 
 class Controller {
-    constructor (carServicesService) {
+    constructor(carServicesService) {
         this._carServicesService = carServicesService;
     }
 
-    $onInit () {
+    $onInit() {
         this.carServices = this._carServicesService.getCarServices(this.limit, this.region);
     }
 }

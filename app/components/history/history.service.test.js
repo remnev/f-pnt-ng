@@ -17,7 +17,7 @@ describe('myApp.history.service', () => {
     });
 
     it('headerText is String', () => {
-        assert(typeof fpHistoryService.headerText === 'string');
+        assert(angular.isString(fpHistoryService.headerText));
     });
 
     it('models is Array', () => {

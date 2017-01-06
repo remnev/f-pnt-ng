@@ -5,9 +5,9 @@ angular.module('myApp')
 
 config.$inject = ['$locationProvider'];
 
-function config ($locationProvider) {
+function config($locationProvider) {
     $locationProvider.html5Mode({
         enabled: true,
-        requireBase: false
+        requireBase: false,
     });
 }
