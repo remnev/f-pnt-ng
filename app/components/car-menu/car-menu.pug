@@ -1,0 +1,9 @@
+img.car-menu__image(ng-src="{{vm.image}}")
+.car-menu__models-menu
+    .car-menu__models-menu-item(ng-repeat="item in vm.modelsMenuItems", ng-class="{active: item.isActive}")
+        fp-link(data-url="/cars/{{item.slug}}/") {{item.title}}
+        .car-menu__models-menu-item-dates ({{item.dates.from}} – {{item.dates.to}})
+fp-title(data-level="1") {{vm.currentModel.title}} – фото, технические характеристики, отзывы
+.car-menu__divisions-menu
+    .car-menu__divisions-menu-item(ng-repeat="item in vm.divisionsMenuItems")
+        fp-link(data-url="/cars/{{vm.currentModel.slug}}/\#{{item.slug}}") {{item.title}}

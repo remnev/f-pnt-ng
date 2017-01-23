@@ -49,7 +49,7 @@ module.exports = config => {
             loader: 'ngtemplate!html!jade-html'
           },
           {
-            test: /\.styl$/,
+            test: /\.(?:styl|jpg)$/,
             loader: 'ignore'
           }
         ]

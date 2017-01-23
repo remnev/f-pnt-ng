@@ -1,0 +1,50 @@
+.car-menu
+    display: block
+    position: relative
+    font-family: Arial, sans-serif
+
+    &__image
+        outline: 1px solid #eee
+
+    &__models-menu
+        position: absolute
+        top: 20px
+        left: 10px
+        right: 10px
+        background-color: rgba(255, 255, 255, .9)
+        display: flex
+        justify-content: space-around
+
+    &__models-menu-item
+        display: inline-block
+        padding: 20px 10px
+
+        &.active .link
+            color: #000
+
+        .link
+            font-size: 16px
+
+    &__models-menu-item-dates
+        font-style: italic
+        margin-top: 12px
+
+    &__divisions-menu
+        position: absolute
+        bottom: 20px
+        right: 10px
+        background-color: rgba(255, 255, 255, .9)
+        font-size: 13px
+        letter-spacing: .05em
+
+    &__divisions-menu-item
+        display: inline-block
+        padding: 20px 10px
+
+    > .title
+        position: absolute
+        top: 100px
+        left: 10px
+        right: 10px
+        color: #fff
+        text-shadow: 0 2px 4px #000
