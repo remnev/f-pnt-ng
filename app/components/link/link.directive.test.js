@@ -12,7 +12,7 @@ describe('myApp.link.directive', () => {
         $rootScope = _$rootScope_;
     }));
 
-    it('is an appropriate link', () => {
+    it('is a href link', () => {
         const url = 'foo.com';
         const element = $compile(`<foo><fp-link data-url="${url}"></fp-link></foo>`)($rootScope);
         let link;
@@ -23,6 +23,19 @@ describe('myApp.link.directive', () => {
 
         assert.strictEqual(link.tagName.toLowerCase(), 'a');
         assert.strictEqual(link.getAttribute('href'), url);
+    });
+
+    it('is a sref link', () => {
+        const state = 'foo';
+        const element = $compile(`<foo><fp-link data-state="${state}"></fp-link></foo>`)($rootScope);
+        let link;
+
+        $rootScope.$digest();
+
+        link = element.children()[0];
+
+        assert.strictEqual(link.tagName.toLowerCase(), 'a');
+        assert.strictEqual(link.getAttribute('ui-sref'), state);
     });
 
     it('has `.link` class', () => {

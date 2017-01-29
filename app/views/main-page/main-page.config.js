@@ -4,8 +4,9 @@ import angular from 'angular';
 angular.module('myApp.views.mainPage')
     .config(config);
 
-function config($routeProvider) {
-    $routeProvider.when('/', {
+function config($stateProvider) {
+    $stateProvider.state('main', {
+        url: '/',
         templateUrl: tmpl,
         controller: Controller,
         controllerAs: 'vm',
@@ -18,5 +19,5 @@ class Controller {
     }
 }
 
-config.$inject = ['$routeProvider'];
 Controller.$inject = ['headerService'];
+config.$inject = ['$stateProvider'];

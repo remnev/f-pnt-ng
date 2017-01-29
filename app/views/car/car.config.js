@@ -1,8 +1,6 @@
 import tmpl from './car.pug';
 import angular from 'angular';
 
-// todo: if requested an unknown car slug – redirect to 404
-// eslint-disable-next-line no-unused-vars
 const availaibleModels = [
     'punto-176',
     'punto-188',
@@ -15,12 +13,10 @@ const availaibleModels = [
 angular.module('myApp.views.car')
     .config(config);
 
-function config($routeProvider) {
-    $routeProvider
-        .when('/cars/', {
-            redirectTo: '/cars/punto/',
-        })
-        .when('/cars/:car/', {
+function config($stateProvider) {
+    $stateProvider
+        .state('car', {
+            url: `/car/{car: (?:${availaibleModels.join('|')})}/`,
             templateUrl: tmpl,
             controller: Controller,
             controllerAs: 'vm',
@@ -28,18 +24,18 @@ function config($routeProvider) {
 }
 
 class Controller {
-    constructor($scope, headerService, $route) {
-        const currentCar = $route.current.params.car;
+    constructor($scope, headerService, $stateParams) {
+        const currentCar = $stateParams.car;
 
         this.currentCar = currentCar;
 
         headerService
             .setBreadcrumbs([
-                {path: '/cars/', title: 'Машины'},
-                {path: `/cars/${currentCar}/`, title: currentCar},
+                {state: 'car({car: "punto"})', title: 'Машины'},
+                {state: `car({car: ${currentCar}})`, title: currentCar},
             ])
             .toggleBreadcrumbs(true)
-            .setActiveMenuItem('cars');
+            .setActiveMenuItem('car');
 
         $scope.$on('$destroy', () => {
             headerService.toggleBreadcrumbs(false);
@@ -47,5 +43,5 @@ class Controller {
     }
 }
 
-config.$inject = ['$routeProvider'];
-Controller.$inject = ['$scope', 'headerService', '$route'];
+config.$inject = ['$stateProvider'];
+Controller.$inject = ['$scope', 'headerService', '$stateParams'];

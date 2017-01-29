@@ -15,8 +15,8 @@ class Service {
         };
 
         this.menuItems = [
-            {slug: 'main', path: '/', title: 'Главная'},
-            {slug: 'cars', path: '/cars/', title: 'Машины'},
+            {slug: 'main', state: 'main', title: 'Главная'},
+            {slug: 'car', state: 'car({car: "punto"})', title: 'Машины'},
             // {path: '/services/', title: 'Сервисы'},
             // {path: '/parts/', title: 'Запчасти'},
             // {path: '/q-a/', title: 'Вопросы-ответы'}
@@ -31,10 +31,10 @@ class Service {
 
     setBreadcrumbs(data) {
         this.breadcrumbs.items = data.reduce((acc, item) => {
-            acc.push({path: item.path, title: item.title});
+            acc.push({state: item.state, title: item.title});
 
             return acc;
-        }, [{path: '/', title: 'Главная'}]);
+        }, [{state: 'main', title: 'Главная'}]);
 
         return this;
     }

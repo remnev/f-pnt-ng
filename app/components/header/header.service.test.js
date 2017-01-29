@@ -34,12 +34,12 @@ describe('myApp.header.service', () => {
     describe('myApp.header.service.setBreadcrumbs()', () => {
         it('set breadcrumbs\' items', () => {
             const data = [
-                {path: 'foo', title: 'bar'},
+                {state: 'foo', title: 'bar'},
             ];
 
             headerService.setBreadcrumbs(data);
 
-            assert.deepEqual(headerService.breadcrumbs.items, [{path: '/', title: 'Главная'}].concat(data));
+            assert.deepEqual(headerService.breadcrumbs.items, [{state: 'main', title: 'Главная'}].concat(data));
         });
     });
 

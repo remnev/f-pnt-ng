@@ -4,10 +4,18 @@ import angular from 'angular';
 angular.module('myApp.views.notFound')
     .config(config);
 
-function config($routeProvider) {
-    $routeProvider.otherwise({
+function config($stateProvider, $urlRouterProvider) {
+    $stateProvider.state('notFound', {
         templateUrl: tmpl,
+    });
+
+    $urlRouterProvider.otherwise(($injector, $location) => {
+       const state = $injector.get('$state');
+
+       state.go('notFound');
+
+       return $location.path();
     });
 }
 
-config.$inject = ['$routeProvider'];
+config.$inject = ['$stateProvider', '$urlRouterProvider'];

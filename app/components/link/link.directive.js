@@ -1,4 +1,5 @@
-import templateUrl from './link.pug';
+import hrefTmpl from './link-href.pug';
+import srefTmpl from './link-sref.pug';
 import angular from 'angular';
 
 angular.module('myApp.link')
@@ -12,9 +13,18 @@ function directive() {
         transclude: true,
         scope: {
             url: '@',
+            state: '@',
         },
         controllerAs: 'vm',
         bindToController: true,
         controller: class {},
     };
+}
+
+function templateUrl(elem, attr) {
+    if (attr.url) {
+        return hrefTmpl;
+    } else if (attr.state) {
+        return srefTmpl;
+    }
 }

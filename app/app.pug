@@ -4,14 +4,15 @@ html(lang='ru', ng-app='myApp')
 
   head
     meta(charset='utf-8')
+    //- todo: change on any state change
     title My AngularJS App
+    //- todo: change on any state change
     meta(name='description', content='TBD')
 
   body
     fp-header
-    ng-view
+    ui-view
     fp-footer
 
     //- In production use `.min`
     script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js')
-    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-route.js')

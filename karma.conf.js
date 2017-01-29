@@ -9,10 +9,6 @@ module.exports = config => {
         watched: false
       },
       {
-        pattern: 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js',
-        watched: false
-      },
-      {
         pattern: 'bower_components/angular-mocks/angular-mocks.js',
         watched: false
       },
