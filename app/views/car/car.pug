@@ -1,2 +1,4 @@
 .car-page__content
-    fp-car-menu(data-car="{{vm.currentCar}}")
+    fp-car-menu.car-page__menu(data-car="{{vm.currentCar}}")
+    fp-title(data-level="3") Технические характеристики {{vm.currentCar}}
+    fp-car-tech-specs(data-car="{{vm.currentCar}}")

@@ -37,6 +37,10 @@ module.exports = {
                 }
             },
             {
+                test: /\.json$/,
+                loader: 'json'
+            },
+            {
                 test: /\.styl$/,
                 loader: ExtractTextPlugin.extract('css!stylus?linenos')
             },

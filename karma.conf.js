@@ -41,6 +41,10 @@ module.exports = config => {
             }
           },
           {
+              test: /\.json$/,
+              loader: 'json'
+          },
+          {
             test: /\.pug$/,
             loader: 'ngtemplate!html!jade-html'
           },

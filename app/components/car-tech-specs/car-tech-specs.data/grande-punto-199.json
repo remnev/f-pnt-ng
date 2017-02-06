@@ -1,0 +1,126 @@
+[
+    {
+        "engine": {
+            "volume": "1.2",
+            "hp": "69",
+            "type": "бензин",
+            "cylinders": "4, в ряд",
+            "pistons": "70.8 x 78.9",
+            "volumeCm": "1242",
+            "eco": "Евро 6",
+            "compressionRate": "11.1:1",
+            "power": "69 (51) 5500",
+            "torque": "102 3000"
+        },
+        "transmission": {
+            "drive": "передний",
+            "amount": "5 + задняя"
+        },
+        "steering": {
+            "type": "электро DualDrive™",
+            "diameter": "10.9"
+        },
+        "breaks": {
+            "front": "вент. диски / 257",
+            "rear": "барабанные / 257"
+        },
+        "suspension": {
+            "front": "McPherson независ.",
+            "rear": "торсионная балка"
+        },
+        "dimensions": {
+            "wheelBase": "2510",
+            "front": "1473",
+            "rear": "1466",
+            "length": "4065",
+            "width": "1687",
+            "height": "1490",
+            "bootVolume": "275 / 1030"
+        },
+        "wheels": [
+            "175/65 R15",
+            "185/65 R15"
+        ],
+        "capacity": {
+            "weight": "1015 / 1030",
+            "trailerWeight": "400 / 900",
+            "gasTankVolume": "45"
+        },
+        "performance": {
+            "maxSpeed": "155",
+            "acceleration100": "14.4"
+        },
+        "consumption": {
+            "city": "7.2",
+            "country": "4.4",
+            "mixed": "5.4",
+            "co": "126"
+        },
+        "other": {
+            "startStop": "нет",
+            "dpf": "да"
+        }
+    },
+    {
+        "engine": {
+            "volume": "1.4",
+            "hp": "77",
+            "type": "бензин",
+            "cylinders": "4, в ряд",
+            "pistons": "70.8 x 78.9",
+            "volumeCm": "1242",
+            "eco": "Евро 6",
+            "compressionRate": "11.1:1",
+            "power": "69 (51) 5500",
+            "torque": "102 3000"
+        },
+        "transmission": {
+            "drive": "передний",
+            "amount": "5 + задняя"
+        },
+        "steering": {
+            "type": "электро DualDrive™",
+            "diameter": "10.9"
+        },
+        "breaks": {
+            "front": "вент. диски / 257",
+            "rear": "барабанные / 257"
+        },
+        "suspension": {
+            "front": "McPherson независ.",
+            "rear": "торсионная балка"
+        },
+        "dimensions": {
+            "wheelBase": "2510",
+            "front": "1473",
+            "rear": "1466",
+            "length": "4065",
+            "width": "1687",
+            "height": "1490",
+            "bootVolume": "275 / 1030"
+        },
+        "wheels": [
+            "175/65 R15",
+            "185/65 R15"
+        ],
+        "capacity": {
+            "weight": "1015 / 1030",
+            "trailerWeight": "400 / 900",
+            "gasTankVolume": "45"
+        },
+        "performance": {
+            "maxSpeed": "155",
+            "acceleration100": "14.4"
+        },
+        "consumption": {
+            "city": "7.2",
+            "country": "4.4",
+            "mixed": "5.4",
+            "co": "126"
+        },
+        "other": {
+            "startStop": "нет",
+            "dpf": "да"
+        }
+    }
+]

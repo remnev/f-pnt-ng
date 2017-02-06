@@ -1,0 +1,139 @@
+table(rules="all", bordercolor="#f7f7f7", border="1", cellpadding="6")
+    thead
+        tr
+            th
+            th(ng-repeat="complectation in vm.complectations", bordercolor="#fff")
+                div {{complectation.engine.volume}}
+                div {{complectation.engine.hp}} л.с.
+                div {{complectation.engine.type}}
+    tbody
+        tr
+            td.car-tech-specs__title(colspan="3") Двигатель
+        tr
+            td Количество цилиндров, расположение
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.cylinders}}
+        tr
+            td Диаметр/ход поршня (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.pistons}}
+        tr
+            td Объем (см³)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.volumeCm}}
+        tr
+            td Экологический стандарт выхлопных газов
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.eco}}
+        tr
+            td Степень сжатия
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.compressionRate}}
+        tr
+            td Макс. мощность л.с. (кВт) при оборотах
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.power}}
+        tr
+            td Макс. крутящий момент Нм при оборотах
+            td(ng-repeat="complectation in vm.complectations") {{complectation.engine.torque}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Трансмиссия
+        tr
+            td Привод
+            td(ng-repeat="complectation in vm.complectations") {{complectation.transmission.drive}}
+        tr
+            td Количество передач КПП
+            td(ng-repeat="complectation in vm.complectations") {{complectation.transmission.amount}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Рулевое управление
+        tr
+            td Тип
+            td(ng-repeat="complectation in vm.complectations") {{complectation.steering.type}}
+        tr
+            td Диаметр разворота (м)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.steering.diameter}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Тормозная система
+        tr
+            td Перед тип / диаметр (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.breaks.front}}
+        tr
+            td Зад тип / диаметр (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.breaks.rear}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Подвеска
+        tr
+            td Перед
+            td(ng-repeat="complectation in vm.complectations") {{complectation.suspension.front}}
+        tr
+            td Зад
+            td(ng-repeat="complectation in vm.complectations") {{complectation.suspension.rear}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Габариты
+        tr
+            td Колесная база (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.dimensions.wheelBase}}
+        tr
+            td Перед / зад (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.dimensions.front}} / {{complectation.dimensions.rear}}
+        tr
+            td Длина (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.dimensions.length}}
+        tr
+            td Ширина (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.dimensions.width}}
+        tr
+            td Высота (мм)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.dimensions.height}}
+        tr
+            td Объем багажника (дм³) макс / мин
+            td(ng-repeat="complectation in vm.complectations") {{complectation.dimensions.bootVolume}}
+
+        tr
+            td.car-tech-specs__title Колеса
+            td(ng-repeat="complectation in vm.complectations")
+                div(ng-repeat="item in complectation.wheels") {{item}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Вес, вместимость
+        tr
+            td Снаряженная масса 3Д / 5Д (кг)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.capacity.weight}}
+        tr
+            td Макс. буксируемая масса без торм / с торм (кг)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.capacity.trailerWeight}}
+        tr
+            td Объем топливного бака (л)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.capacity.gasTankVolume}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Производительность
+        tr
+            td Максимальная скорость (км/ч)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.performance.maxSpeed}}
+        tr
+            td Разгон 0-100 км/ч (сек)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.performance.acceleration100}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Расход топлива и выхлоп
+        tr
+            td Городской цикл (л/100км)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.consumption.city}}
+        tr
+            td Загородный цикл (л/100км)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.consumption.country}}
+        tr
+            td Смешанный цикл (л/100км)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.consumption.mixed}}
+        tr
+            td Выброс CO₂ (г/км)
+            td(ng-repeat="complectation in vm.complectations") {{complectation.consumption.co}}
+
+        tr
+            td.car-tech-specs__title(colspan="3") Прочее
+        tr
+            td Система Старт/Стоп
+            td(ng-repeat="complectation in vm.complectations") {{complectation.other.startStop}}
+        tr
+            td Наличие сажевого фильтра
+            td(ng-repeat="complectation in vm.complectations") {{complectation.other.dpf}}

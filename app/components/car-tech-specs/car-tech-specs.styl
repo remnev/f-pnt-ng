@@ -1,0 +1,46 @@
+.car-tech-specs
+    display: block
+    font-family: Arial, sans-serif
+    font-size: 11px
+
+    table
+        width: 100%
+        overflow: hidden
+
+    thead
+        background-color: #f7f7f7
+
+    th
+        padding: 10px 0
+
+        &:not(:last-child)
+            border-right: 1px solid #fff
+
+    tbody
+        text-align: center
+
+        tr
+            &:hover
+                background-color: #fafafa
+
+    td
+        position: relative
+
+        &:first-child
+            padding-left: 10px
+            text-align: left
+            pointer-events: none
+
+        &:hover::after
+            content: ''
+            position: absolute
+            background-color: #fafafa
+            left: 0
+            top: -5000px
+            height: 10000px
+            width: 100%
+            z-index: -1
+
+    &__title
+        text-transform: uppercase
+        font-weight: bold
