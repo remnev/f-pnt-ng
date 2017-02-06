@@ -12,6 +12,14 @@ describe('myApp.link.directive', () => {
         $rootScope = _$rootScope_;
     }));
 
+    it('throws an error if no params passed', () => {
+        try {
+            $compile(`<foo><fp-link></fp-link></foo>`)($rootScope);
+        } catch (e) {
+            assert(e);
+        }
+    });
+
     it('is a href link', () => {
         const url = 'foo.com';
         const element = $compile(`<foo><fp-link data-url="${url}"></fp-link></foo>`)($rootScope);

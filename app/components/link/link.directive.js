@@ -24,7 +24,11 @@ function directive() {
 function templateUrl(elem, attr) {
     if (attr.url) {
         return hrefTmpl;
-    } else if (attr.state) {
+    }
+
+    if (attr.state) {
         return srefTmpl;
     }
+
+    throw new Error('No attribute passed, expected: `data-url`, `data-state`');
 }
