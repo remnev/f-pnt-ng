@@ -24,7 +24,7 @@ function config($stateProvider) {
 }
 
 class Controller {
-    constructor($scope, headerService, $stateParams) {
+    constructor($scope, headerService, $stateParams, $filter) {
         const currentCar = $stateParams.car;
 
         this.currentCar = currentCar;
@@ -32,7 +32,7 @@ class Controller {
         headerService
             .setBreadcrumbs([
                 {state: 'car({car: "punto"})', title: 'Машины'},
-                {state: `car({car: ${currentCar}})`, title: currentCar},
+                {state: `car({car: ${currentCar}})`, title: $filter('fpCar')(currentCar)},
             ])
             .toggleBreadcrumbs(true)
             .setActiveMenuItem('car');
@@ -44,4 +44,4 @@ class Controller {
 }
 
 config.$inject = ['$stateProvider'];
-Controller.$inject = ['$scope', 'headerService', '$stateParams'];
+Controller.$inject = ['$scope', 'headerService', '$stateParams', '$filter'];

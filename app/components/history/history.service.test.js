@@ -26,7 +26,7 @@ describe('myApp.history.service', () => {
 
     it('has particular properties of every model', () => {
         fpHistoryService.models.every((model) => {
-            ['years', 'url', 'title', 'description'].forEach((property) => {
+            ['years', 'slug', 'description'].forEach((property) => {
                 assert(model.hasOwnProperty(property));
             });
         });

@@ -27,7 +27,6 @@ class Service {
         this.modelsMenuItems = [
             {
                 slug: 'punto-176',
-                title: 'Punto 1',
                 dates: {
                     from: '1993',
                     to: '1999',
@@ -35,7 +34,6 @@ class Service {
             },
             {
                 slug: 'punto-188',
-                title: 'Punto 2',
                 dates: {
                     from: '1999',
                     to: '2003',
@@ -43,7 +41,6 @@ class Service {
             },
             {
                 slug: 'punto-188-facelift',
-                title: 'Punto 2 Facelift',
                 dates: {
                     from: '2003',
                     to: '2005',
@@ -51,7 +48,6 @@ class Service {
             },
             {
                 slug: 'grande-punto-199',
-                title: 'Grande Punto',
                 dates: {
                     from: '2005',
                     to: '2009',
@@ -59,7 +55,6 @@ class Service {
             },
             {
                 slug: 'punto-evo',
-                title: 'Punto Evo',
                 dates: {
                     from: '2009',
                     to: '2012',
@@ -67,7 +62,6 @@ class Service {
             },
             {
                 slug: 'punto',
-                title: 'Punto',
                 dates: {
                     from: '2012',
                     to: 'н. в.',

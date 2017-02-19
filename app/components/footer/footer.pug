@@ -7,13 +7,13 @@
             .footer__title Технические характеристики
             ul.footer__links
                 li(ng-repeat='model in vm.models')
-                    fp-link(data-url='/car/{{model.slug}}/#tech-specs') {{model.title}}
+                    fp-link(data-url='/car/{{model}}/#tech-specs') {{model | fpCar}}
 
         .footer__section
             .footer__title Отзывы
             ul.footer__links
                 li(ng-repeat='model in vm.models')
-                    fp-link(data-url='/car/{{model.slug}}/#reviews') {{model.title}}
+                    fp-link(data-url='/car/{{model}}/#reviews') {{model | fpCar}}
 
         .footer__section
             fp-link.footer__title(data-url='http://mypunto.ru/forum/') Форум

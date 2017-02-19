@@ -3,5 +3,5 @@ fp-title(data-level="1") {{vm.headerText}}
     .history__model(ng-repeat='model in vm.models')
         .history__years
             .history__year(ng-repeat='year in model.years') {{year}}
-        fp-link.history__title(data-url='{{model.url}}') {{model.title}}
+        fp-link.history__title(data-url='/car/{{model.slug}}/') {{model.slug | fpCar}}
         .history__description {{model.description}}
