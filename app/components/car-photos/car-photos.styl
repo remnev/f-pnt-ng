@@ -1,0 +1,42 @@
+.car-photos
+    display: block
+
+    &__photo
+        width: 320px
+
+        &:hover
+            cursor: pointer
+            box-shadow: 0 1px 2px 0
+            position: relative
+            top: -1px
+
+    &__pill
+        margin-bottom: -3px
+
+        &:nth-child(even) ^[0]__photo
+            width: 480px
+
+    &__paranja
+        position: fixed
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background-color: rgba(0, 0, 0, .6)
+        display: flex
+        justify-content: center
+        align-items: center
+        z-index: 1
+
+        &:not(.visible)
+            display: none
+
+    &__close-fullsize
+        color: #fff
+        font-size: 32px
+        cursor: pointer
+        vertical-align: top
+        margin-left: 10px
+
+        &:not(:hover)
+            opacity: .8

@@ -9,7 +9,7 @@ function factory() {
 
 class Service {
     constructor(carSlug) {
-        this.image = require(`./images/${carSlug}.jpg`); // eslint-disable-line no-undef
+        this.image = require(`./car-menu.images/${carSlug}.jpg`); // eslint-disable-line no-undef
         this.divisionsMenuItems = [
             {
                 title: 'Технические характеристики',
