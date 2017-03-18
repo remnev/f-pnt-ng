@@ -1,5 +1,6 @@
 import angular from 'angular';
 import assert from 'assert';
+import _ from 'lodash';
 import '.';
 
 let carPhotosService;
@@ -25,26 +26,18 @@ describe('myApp.carPhotos.service', () => {
         });
     });
 
-    describe('._separate()', () => {
-        it('photos should be separated by groups', () => {
-            const photos = carPhotosService._separate([
-                './car-photos.images/no-photo.jpg',
-                './car-photos.images/no-photo.jpg',
-                './car-photos.images/no-photo.jpg',
-                './car-photos.images/no-photo.jpg',
-                './car-photos.images/no-photo.jpg',
-                './car-photos.images/no-photo.jpg',
-                './car-photos.images/no-photo.jpg',
+    describe('.separate()', () => {
+        it('each photo should be an object (means was read from fs)', () => {
+            const pills = carPhotosService.constructor.separate([
                 './car-photos.images/no-photo.jpg',
                 './car-photos.images/no-photo.jpg',
             ]);
-            const firstGroupLength = photos[0].length;
-            const secondGroupLength = photos[1].length;
-            const thirdGroupLength = photos[2].length;
 
-            assert(firstGroupLength > 0 && firstGroupLength < 4);
-            assert(secondGroupLength > 0 && secondGroupLength < 3);
-            assert(thirdGroupLength > 0 && thirdGroupLength < 4);
+            pills.forEach((pill) => {
+                pill.forEach((photo) => {
+                    assert(_.isObject(photo.value));
+                });
+            });
         });
     });
 });

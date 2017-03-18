@@ -12,11 +12,11 @@ module.exports = config => {
         pattern: 'bower_components/angular-mocks/angular-mocks.js',
         watched: false
       },
-      'components/**/*.test.js'
+      './**/*.test.js'
     ],
 
     preprocessors: {
-      'components/**/*.test.js': ['webpack']
+      './**/*.test.js': ['webpack']
     },
 
     webpack: {
