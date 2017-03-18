@@ -4,4 +4,4 @@ div.car-photos__paranja(ng-class="{visible: vm.isFullsizePhotoVisible}")
         fa(data-name='times').car-photos__close-fullsize(ng-click="vm.onCloseFullsizeClick()")
 div.car-photos__pills
     div.car-photos__pill(ng-repeat="photoPill in vm.photos")
-        img.car-photos__photo(ng-repeat="photo in photoPill", ng-src="{{photo.path}}", ng-click="vm.onPhotoClick(photo.i)")
+        img.car-photos__photo(ng-repeat="photo in photoPill", ng-src="{{photo.value}}", ng-click="vm.onPhotoClick(photo.i)")

@@ -1,4 +1,5 @@
 import angular from 'angular';
+import Util from '../../lib/util';
 
 angular.module('myApp.carPhotos').factory('CarPhotosService', factory);
 
@@ -6,7 +7,7 @@ function factory() {
     return Service;
 }
 
-class Service {
+class Service extends Util {
     constructor(carSlug) {
         const data = {
             'punto-176': [
@@ -32,48 +33,27 @@ class Service {
             ],
         };
 
+        super(...arguments);
+
         this._data = data;
         this._carSlug = carSlug;
-        this.photos = this._separate(data[carSlug]);
         this.fullSizePhoto = require(data[carSlug][0]); // eslint-disable-line no-undef
+        this.photos = this.constructor.separate(data[carSlug]);
     }
 
     getFullsizePhoto(i) {
         return require(this._data[this._carSlug][i]); // eslint-disable-line no-undef
     }
 
-    _separate(photos) {
-        let oddCounter = 0;
-        let evenCounter = 0;
+    static separate(photos) {
+        const result = super.separate(photos);
 
-        return photos.reduce((acc, photoPath, i, arr) => {
-            const photo = {
-                path: require(photoPath), // eslint-disable-line no-undef
-                i,
-            };
+        result.forEach((pill) => {
+            pill.forEach((item) => {
+                item.value = require(item.value); // eslint-disable-line no-undef
+            });
+        });
 
-            /* istanbul ignore else  */
-            if (oddCounter < 3 && evenCounter === 0 || evenCounter >= 2) {
-                evenCounter = 0;
-
-                if (oddCounter === 0) {
-                    acc.push([]);
-                }
-
-                acc[acc.length - 1].push(photo);
-                oddCounter += 1;
-            } else if (evenCounter < 2) {
-                oddCounter = 0;
-
-                if (evenCounter === 0) {
-                    acc.push([]);
-                }
-
-                acc[acc.length - 1].push(photo);
-                evenCounter += 1;
-            }
-
-            return acc;
-        }, []);
+        return result;
     }
 }
