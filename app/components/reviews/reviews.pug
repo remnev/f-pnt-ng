@@ -1,9 +1,11 @@
-.reviews__review(ng-repeat="review in vm.reviews")
-    .reviews__review-title {{review.title}}
-    .reviews__review-total-vote {{vm.getReviewTotalVote(review.votes.common)}}
-    .reviews__review-info
-        .reviews__review-posted-at {{review.postedAt}}
-        .reviews__review-author {{review.author}}
-        .reviews__review-car-info {{review.car.vendor}} {{review.car.model}} {{review.car.engine}} {{review.car.year}} г.в.
-    .reviews__review-text {{review.text}}
-    fp-link.reviews__review-show-more(data-url="/cars/{{review.car.slug}}/reviews/{{review.id}}/") Отзыв полностью
+.reviews__pill(ng-repeat="reviewPill in vm.reviews")
+    .reviews__review(ng-repeat="review in reviewPill")
+        .reviews__review-title {{review.value.title}}
+        .reviews__review-total-vote {{vm.getReviewTotalVote(review.value.votes.common)}}
+        .reviews__review-info
+            .reviews__review-posted-at {{review.value.postedAt}}
+            .reviews__review-author {{review.value.author}}
+            .reviews__review-car-info {{review.value.car.vendor}} {{review.value.car.slug | fpCar}} {{review.value.car.engine}} {{review.value.car.year}} г.в.
+        .reviews__review-text {{review.value.text}}
+        fp-link.reviews__review-show-more(data-url="/cars/{{review.value.car.slug}}/reviews/{{review.value.id}}/") Отзыв полностью
+button.reviews__show-more(ng-if="vm.isShowMoreButtonVisible", ng-click="vm.onShowMoreButtonClick()") Показать еще {{vm.showMoreCount}} из {{vm.reviewsRemainder}}

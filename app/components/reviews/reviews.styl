@@ -5,6 +5,9 @@
     font-family: Arial, sans-serif
     font-size: 13px
 
+    &__pill:nth-child(even) &__review
+        width: 50%
+
     &__review
         display: inline-block
         box-sizing: border-box
@@ -58,3 +61,18 @@
         font-style: italic
         float: right
         display: inline-block
+
+    &__show-more
+        display: block
+        margin: 10px auto 0
+        padding: 8px 30px
+        color: #b80005
+        font-size: 13px
+        font-family: Arial, sans-serif
+        border: none
+        background-color: #f7f7f7
+        outline: 1px solid #c4c4c4
+
+        &:hover
+            cursor: pointer
+            outline: 1px solid #ababab

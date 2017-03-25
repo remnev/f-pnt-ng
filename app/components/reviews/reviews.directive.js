@@ -13,6 +13,8 @@ function directive() {
         controllerAs: 'vm',
         scope: {
             limit: '@',
+            car: '@',
+            showMore: '@',
         },
         bindToController: true,
     };
@@ -23,12 +25,17 @@ function link(scope, element) {
 }
 
 class Controller {
-    constructor(reviewsService) {
-        this._reviewsService = reviewsService;
+    constructor(ReviewsService) {
+        this._reviewsService = new ReviewsService();
     }
 
     $onInit() {
-        this.reviews = this._reviewsService.getReviews(this.limit);
+        this._limit = parseInt(this.limit, 10);
+
+        this.reviews = this._reviewsService.getReviews(this._limit, this.car);
+        this.isShowMoreButtonVisible = this.showMore;
+        this.reviewsRemainder = this._reviewsService.reviewsRemainder;
+        this.showMoreCount = this._reviewsService.showMoreCount;
     }
 
     getReviewTotalVote(votesData) {
@@ -37,6 +44,13 @@ class Controller {
 
         return Math.floor(sum / votesFields.length);
     }
+
+    onShowMoreButtonClick() {
+        this.reviews = this.reviews.concat(this._reviewsService.getReviews(this._limit, this.car));
+        this.showMoreCount = this._reviewsService.showMoreCount;
+        this.reviewsRemainder = this._reviewsService.reviewsRemainder;
+        this.isShowMoreButtonVisible = this.showMoreCount > 0;
+    }
 }
 
-Controller.$inject = ['reviewsService'];
+Controller.$inject = ['ReviewsService'];

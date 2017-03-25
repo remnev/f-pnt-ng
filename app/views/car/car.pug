@@ -4,3 +4,5 @@
     fp-car-tech-specs(data-car="{{vm.currentCar}}")
     fp-title(data-level="3") Фотографии {{vm.currentCar | fpCar}}
     fp-car-photos(data-car="{{vm.currentCar}}")
+    fp-title(data-level="3") Отзывы о {{vm.currentCar | fpCar}}
+    fp-reviews(data-car="{{vm.currentCar}}", data-limit="5", data-show-more="true")

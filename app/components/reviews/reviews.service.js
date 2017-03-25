@@ -1,136 +1,39 @@
 import angular from 'angular';
+import Util from '../../lib/util';
 
 angular.module('myApp.reviews')
-    .factory('reviewsService', factory);
+    .factory('ReviewsService', factory);
 
 function factory() {
-    return new Service();
+    return Service;
 }
 
-class Service {
+class Service extends Util {
     constructor() {
-        this.reviews = [
-            {
-                id: '1',
-                title: 'Хороший автомобильчик, и вот почему я раcскажу вам мои друзья',
-                postedAt: '29.11.2014 21:24',
-                author: 'Константин Константинопольский',
-                car: {
-                    slug: 'grande-punto',
-                    vendor: 'Fiat',
-                    model: 'Grande Punto',
-                    year: '2006',
-                    engine: '1.3 Multijet',
-                    hp: '120',
-                    gb: 'робот',
-                },
-                votes: {
-                    common: {
-                        exterior: 5,
-                        comfort: 3,
-                        safety: 5,
-                        reliability: 4,
-                        drivingCharacteristics: 3,
-                    },
-                    custom: {
-                        good: ['Внешний вид', 'Стоимость содержания и обслуживания', 'Ликвидность на вторичном рынке'],
-                        bad: ['Дальний свет', 'Мотор не едет на заявленные 175 лошадей'],
-                    },
-                },
-                text: 'Неплохой городской автомобиль, экономичный двигатель, просторный (для своего класса) салон. Ездил на машине на большие расстояния (500 - 1000км) -впечатления хорошие: удобные кресла, низкий расход топлива по трассе, поломок не было. О плохом: не дешевые запчасти (!), низкий клиренс.'.repeat(2) // eslint-disable-line
-            },
-            {
-                id: '2',
-                title: 'Хороший автомобильчик, и вот почему я раcскажу вам мои друзья',
-                postedAt: '29.11.2014 21:24',
-                author: 'Константин Константинопольский',
-                car: {
-                    slug: 'grande-punto',
-                    vendor: 'Fiat',
-                    model: 'Grande Punto',
-                    year: '2006',
-                    engine: '1.3 Multijet',
-                    hp: '120',
-                    gb: 'робот',
-                },
-                votes: {
-                    common: {
-                        exterior: 5,
-                        comfort: 3,
-                        safety: 5,
-                        reliability: 4,
-                        drivingCharacteristics: 3,
-                    },
-                    custom: {
-                        good: ['Внешний вид', 'Стоимость содержания и обслуживания', 'Ликвидность на вторичном рынке'],
-                        bad: ['Дальний свет', 'Мотор не едет на заявленные 175 лошадей'],
-                    },
-                },
-                text: 'Неплохой городской автомобиль, экономичный двигатель, просторный (для своего класса) салон. Ездил на машине на большие расстояния (500 - 1000км) -впечатления хорошие: удобные кресла, низкий расход топлива по трассе, поломок не было. О плохом: не дешевые запчасти (!), низкий клиренс.' // eslint-disable-line
-            },
-            {
-                id: '3',
-                title: 'Хороший автомобильчик, и вот почему я раcскажу вам мои друзья',
-                postedAt: '29.11.2014 21:24',
-                author: 'Константин Константинопольский',
-                car: {
-                    slug: 'grande-punto',
-                    vendor: 'Fiat',
-                    model: 'Grande Punto',
-                    year: '2006',
-                    engine: '1.3 Multijet',
-                    hp: '120',
-                    gb: 'робот',
-                },
-                votes: {
-                    common: {
-                        exterior: 5,
-                        comfort: 3,
-                        safety: 5,
-                        reliability: 4,
-                        drivingCharacteristics: 3,
-                    },
-                    custom: {
-                        good: ['Внешний вид', 'Стоимость содержания и обслуживания', 'Ликвидность на вторичном рынке'],
-                        bad: ['Дальний свет', 'Мотор не едет на заявленные 175 лошадей'],
-                    },
-                },
-                text: 'Неплохой городской автомобиль, экономичный двигатель, просторный (для своего класса) салон. Ездил на машине на большие расстояния (500 - 1000км) -впечатления хорошие: удобные кресла, низкий расход топлива по трассе, поломок не было. О плохом: не дешевые запчасти (!), низкий клиренс.' // eslint-disable-line
-            },
-            {
-                id: '4',
-                title: 'Хороший автомобильчик, и вот почему я раcскажу вам мои друзья',
-                postedAt: '29.11.2014 21:24',
-                author: 'Константин Константинопольский',
-                car: {
-                    slug: 'grande-punto',
-                    vendor: 'Fiat',
-                    model: 'Grande Punto',
-                    year: '2006',
-                    engine: '1.3 Multijet',
-                    hp: '120',
-                    gb: 'робот',
-                },
-                votes: {
-                    common: {
-                        exterior: 5,
-                        comfort: 3,
-                        safety: 5,
-                        reliability: 4,
-                        drivingCharacteristics: 3,
-                    },
-                    custom: {
-                        good: ['Внешний вид', 'Стоимость содержания и обслуживания', 'Ликвидность на вторичном рынке'],
-                        bad: ['Дальний свет', 'Мотор не едет на заявленные 175 лошадей'],
-                    },
-                },
-                text: 'Неплохой городской автомобиль, экономичный двигатель, просторный (для своего класса) салон. Ездил на машине на большие расстояния (500 - 1000км) -впечатления хорошие: удобные кресла, низкий расход топлива по трассе, поломок не было. О плохом: не дешевые запчасти (!), низкий клиренс.' // eslint-disable-line
-            },
-        ];
+        super(...arguments);
+
+        this.reviews = require('./reviews.data'); // eslint-disable-line no-undef
+        this.reviewsRemainder = 0;
+        this.showMoreCount = 0;
+        this._offset = 0;
     }
 
-    getReviews(limit) {
-        return this.reviews.slice(0, limit);
+    getReviews(limit, car='all') {
+        let reviews = this.reviews;
+        let slicedReviews;
+        let separatedReviews;
+
+        if (car !== 'all') {
+            reviews = reviews.filter((review) => review.car.slug === car);
+        }
+
+        slicedReviews = reviews.slice(this._offset, this._offset + limit);
+        separatedReviews = this.constructor.separate(slicedReviews);
+
+        this._offset += limit;
+        this.reviewsRemainder = reviews.length - this._offset;
+        this.showMoreCount = Math.max(Math.min(limit, reviews.length - this._offset), 0);
+
+        return separatedReviews;
     }
 }
-
