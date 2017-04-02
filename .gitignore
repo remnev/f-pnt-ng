@@ -3,4 +3,5 @@ bower_components/
 coverage/
 public
 !public/robots.txt
+!public/favicon.ico
 npm-debug.log
